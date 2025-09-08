@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: clamp(12px, 9.6px + 0.5vw, 16px);
+    font-family: "Open Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+img {
+    display: block;
+}
+
+input {
+    font: inherit;
+    /* color: rgb(0, 131, 196); */
+}
+
+.backgroundLinear {
+    background-image: linear-gradient(45deg, rgb(0, 2, 45), rgb(13, 0, 198));
+}
+
+@theme {
+    --color-secondary: rgb(0, 0, 50);
+    --color-teritary: rgb(0, 195, 155);
+}
