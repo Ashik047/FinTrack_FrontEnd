@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import "./Carousel.css";
 
 const Carousel = () => {
     const slides = [
@@ -20,26 +20,16 @@ const Carousel = () => {
             text: "Set savings goals and stay on top of your financial journey"
         }
     ];
-    const [currentSlide, setCurrentSlide] = useState(0);
 
-    useEffect(() => {
-        setInterval(() => {
-            setCurrentSlide(prev => (prev + 1) % slides.length);
-        }, 5000);
-    }, []);
     return (
-        <div className='shadow-white p-4 rounded-2xl backgroundLinear mt-10 overflow-hidden md:w-[500px] mx-auto'>
-            <motion.div
-                key={slides[currentSlide].id}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 1 }}
-                className="flex flex-col items-center p-6"
-            >
-                <img src={slides[currentSlide].imgUrl} />
-                <p className='text-white mt-6'>{slides[currentSlide].text}</p>
-            </motion.div>
+        <div className='mt-10 w-full text-gray-600 Carousel h-[300px]'>
+            {slides.map(slide => (
+                <div className={`slide${slide.id} absolute w-[85%] md:w-[500px] lg:w-[800px] h-[300px] flex flex-wrap gap-4 p-4 bg-blue-100 rounded-2xl justify-center items-center left-[50%] -translate-x-[50%]`}>
+                    <img src={slide.imgUrl} className='max-w-[300px] w-full aspect-3/2 object-cover' />
+                    <p className='mt-1 max-w-[400px] w-full text-xl font-medium text-center'>{slide.text}</p>
+                </div>
+            ))
+            }
         </div>
     )
 }

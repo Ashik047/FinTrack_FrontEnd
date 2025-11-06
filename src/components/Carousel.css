@@ -1,0 +1,38 @@
+.Carousel .slide1 {
+    animation: slideshow 9s ease-in-out 0s infinite;
+}
+
+.Carousel .slide2 {
+    animation: slideshow 9s ease-in-out 3s infinite;
+}
+
+.Carousel .slide3 {
+    animation: slideshow 9s ease-in-out 6s infinite;
+}
+
+
+@keyframes slideshow {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    33% {
+        opacity: 0;
+    }
+
+    66% {
+        opacity: 0;
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
